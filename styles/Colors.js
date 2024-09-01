@@ -7,6 +7,8 @@ export const LightThemeColors = {
   buttonText: '#333333',
   operatorButtonBackground: '#4B5EFC',
   numbButtonBackground: '#FFF',
+  switchBackground: '#FFF',
+  toggleBackground: '#D2D3DA',
 };
 
 export const DarkThemeColors = {
@@ -16,5 +18,7 @@ export const DarkThemeColors = {
   buttonText: '#FFFFFF',
   operatorButtonBackground: '#4B5EFC',
   numbButtonBackground: '#2E2F38',
+  switchBackground: '#2E2F38',
+  toggleBackground: '#4E505F',
 };
 

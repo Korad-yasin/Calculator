@@ -12,7 +12,7 @@ const ColorMode = () => {
 
     const toggleTheme = () => {
         Animated.timing(translateX, {
-            toValue: isDarkMode ? 0 : 40, 
+            toValue: isDarkMode ? 0 : 50, 
             duration: 200,
             useNativeDriver: true,
         }).start();
@@ -21,14 +21,14 @@ const ColorMode = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.switchContainer}>
+            <View style={[styles.switchContainer, { backgroundColor: theme.switchBackground }]}>
                 
-                    <Animated.View style={[styles.toggle, { transform: [{ translateX }] }]}>
+                    <Animated.View style={[styles.toggle, { transform: [{ translateX }] }, { backgroundColor: theme.toggleBackground } ]}>
                         <TouchableOpacity onPress={toggleTheme}>
                             <MaterialIcons
                                 name={isDarkMode ? "dark-mode" : "light-mode"}
-                                size={18}
-                                color="white"
+                                size={20}
+                                color={isDarkMode ? "#4B5EFC" : "white"}
                             />
                         </TouchableOpacity>
                     </Animated.View>
@@ -46,20 +46,18 @@ const styles = StyleSheet.create({
 
     },
     switchContainer: {
-        width: 80, 
+        width: 90, 
         height: 40,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         borderRadius: 20,
-        backgroundColor: 'white', 
         paddingHorizontal: 5,
     },
     toggle: {
-        width: 30, 
-        height: 30,
-        borderRadius: 15,
-        backgroundColor: '#000', 
+        width: 32, 
+        height: 32,
+        borderRadius: 20, 
         justifyContent: 'center',
         alignItems: 'center',
     },
