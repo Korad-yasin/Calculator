@@ -9,6 +9,8 @@ export const LightThemeColors = {
   numbButtonBackground: '#FFF',
   switchBackground: '#FFF',
   toggleBackground: '#D2D3DA',
+  calculationColor: 'grey',
+  resultColor: '#000000',
 };
 
 export const DarkThemeColors = {
@@ -20,5 +22,7 @@ export const DarkThemeColors = {
   numbButtonBackground: '#2E2F38',
   switchBackground: '#2E2F38',
   toggleBackground: '#4E505F',
+  calculationColor: 'grey',
+  resultColor: '#FFFFFF',
 };
 
