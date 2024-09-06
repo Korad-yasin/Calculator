@@ -20,14 +20,20 @@ const Index = () => {
     if (["+", "-", "×", "÷"].includes(input)) {
       setOperator(input);
       if (result) {
-        setPreviousValue(result);  // Use result as previousValue for next operation
-        setResult('');  // Clear result when a new operation starts
+        setPreviousValue(result);  
+        setResult('');  
       } else {
         setPreviousValue(currentInput);
       }
-      setCurrentInput('');  // Clear for next number input
+      setCurrentInput('');  
+    } else if (input === "%") {
+      setCurrentInput((prev) => (parseFloat(prev) / 100).toString());  
+    } else if (input === "+/-") {
+      setCurrentInput((prev) => (parseFloat(prev) * -1).toString());  
+    } else if (input === "⌫") {
+      setCurrentInput((prev) => prev.slice(0, -1));  
     } else {
-      setCurrentInput((prev) => prev + input);  // Append numbers
+      setCurrentInput((prev) => prev + input); 
     }
   };
   
@@ -50,9 +56,9 @@ const Index = () => {
   
     if (!isNaN(calculation)) {
       setResult(calculation.toString());
-      setPreviousValue(calculation.toString());  // Continue with result as previousValue
-      setCurrentInput('');  // Clear current input for next operation
-      setOperator('');  // Clear operator
+      setPreviousValue(calculation.toString());  
+      setCurrentInput('');  
+      setOperator('');  
     } else {
       setResult("Error");
     }
@@ -83,7 +89,7 @@ const Index = () => {
                     clearInput={clearInput}
                     input={currentInput}
                     result={result}
-                    previousValue={previousValue}  // Add this
+                    previousValue={previousValue}  
                     operator={operator}
                     
                   />

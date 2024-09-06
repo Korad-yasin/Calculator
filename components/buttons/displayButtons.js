@@ -166,6 +166,7 @@ export default function DisplayButtons({handleInput, calculateResult, clearInput
                         <Text style={[styles.buttonText, { color: theme.buttonText }]}>0</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
+                        onPress={() => handleInput("⌫")}
                         style={[styles.button, { backgroundColor: theme.numbButtonBackground}]}
                         
                     >
